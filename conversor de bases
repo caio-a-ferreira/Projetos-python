@@ -1,0 +1,63 @@
+def bin_to_dec(binary): #definiçao das variaveis
+    return int(binary, 2)
+
+def dec_to_bin(decimal):
+    return bin(decimal)[2:]
+
+def hex_to_dec(hexadecimal):
+    return int(hexadecimal, 16)
+
+def dec_to_hex(decimal):
+    return hex(decimal)[2:]
+
+def oct_to_bin(octal):
+    return format(int(octal, 8), '03b')
+
+def bin_to_oct(binary):
+    return oct(int(binary, 2))
+def main():
+    print("Bem-vindo ao Conversor de Bases Numéricas!") #Menu de interação
+
+    while True:
+        print("\nOpções:")
+        print("1. Binário para Decimal")
+        print("2. Decimal para Binário")
+        print("3. Hexadecimal para Decimal")
+        print("4. Decimal para Hexadecimal")
+        print("5. Octal para Binário")
+        print("6. Binário para Octal")
+        print("0. Sair")
+
+        choice = input("Escolha uma opção: ")
+
+        if choice == '1':
+            binary = input("Digite o número binário: ")
+            decimal = bin_to_dec(binary)
+            print(f"Resultado: {decimal} em decimal")
+        elif choice == '2':
+            decimal = int(input("Digite o número decimal: "))
+            binary = dec_to_bin(decimal)
+            print(f"Resultado: {binary} em binário")
+        elif choice == '3':
+            hexadecimal = input("Digite o número hexadecimal: ")
+            decimal = hex_to_dec(hexadecimal)
+            print(f"Resultado: {decimal} em decimal")
+        elif choice == '4':
+            decimal = int(input("Digite o número decimal: "))
+            hexadecimal = dec_to_hex(decimal)
+            print(f"Resultado: {hexadecimal} em hexadecimal")
+        elif choice == '5':
+            octal = input("Digite o número octal: ")
+            binary = oct_to_bin(octal)
+            print(f"Resultado: {binary} em binário")
+        elif choice == '6':
+            binary = input("Digite o número binário: ")
+            octal = bin_to_oct(binary)
+            print(f"Resultado: {octal} em octal")
+        elif choice == '0':
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
