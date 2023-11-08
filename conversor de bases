@@ -15,6 +15,17 @@ def oct_to_bin(octal):
 
 def bin_to_oct(binary):
     return oct(int(binary, 2))
+
+def bin_to_hex(binary):
+    decimal = int(binary, 2)
+    hexadecimal = dec_to_hex(decimal)
+    return hexadecimal
+
+def hex_to_bin(hexadecimal):
+    decimal = int(hexadecimal, 16)
+    binary = dec_to_bin(decimal)
+    return binary
+
 def main():
     print("Bem-vindo ao Conversor de Bases Numéricas!") #Menu de interação
 
@@ -26,6 +37,8 @@ def main():
         print("4. Decimal para Hexadecimal")
         print("5. Octal para Binário")
         print("6. Binário para Octal")
+        print("7. Hexadecimal para Binário")
+        print("8. Binário para Hexadecimal")
         print("0. Sair")
 
         choice = input("Escolha uma opção: ")
@@ -54,6 +67,14 @@ def main():
             binary = input("Digite o número binário: ")
             octal = bin_to_oct(binary)
             print(f"Resultado: {octal} em octal")
+        elif choice == '7':
+            hexadecimal = input("Digite o número hexadecimal: ")
+            binary = hex_to_bin(hexadecimal)
+            print(f"Resultado: {binary} em binário")
+        elif choice == '8':
+            binary = input("Digite o número binário: ")
+            hexadecimal = bin_to_hex(binary)
+            print(f"Resultado: {hexadecimal} em hexadecimal")
         elif choice == '0':
             break
         else:
